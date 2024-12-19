@@ -1,9 +1,14 @@
-import Weather from "./components/weather.js"
+"use client";
+
+import { useRouter } from 'next/navigation';
+
 export default function Home() {
+  const router = useRouter();
+
   return (
     <>
-    <p>hey</p>
-    <Weather></Weather>
+      <p>hey</p>
+      <button onClick={() => router.push('/admin')}>Admin page</button>
     </>
   );
 }

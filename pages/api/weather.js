@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         return res.status(500).json({message:"API Responde: ${response.status}}"});
       }
       const data = await response.json();
-      res.status(200).json(data.main.temp); // Send data to the frontend
+      res.status(200).json(data.main.temp   ); // Send data to the frontend
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
