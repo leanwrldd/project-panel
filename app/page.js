@@ -1,14 +1,12 @@
-"use client";
-
-import { useRouter } from 'next/navigation';
+import PasswordInput from '/app/components/passwordinput.js';
+import GithubIcon from '/app/components/github.js';
+import GoBack from '/app/components/goback.js';
 
 export default function Home() {
-  const router = useRouter();
 
   return (
     <>
-      <p>hey</p>
-      <button onClick={() => router.push('/admin')}>Admin page</button>
+      <GoBack redirectTo="/admin"/>
     </>
   );
 }
