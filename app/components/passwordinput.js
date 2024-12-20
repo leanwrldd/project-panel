@@ -1,4 +1,16 @@
-export default function Input() {
+"use client";
+
+import { useState } from 'react';
+
+export default function Input({ onPasswordChange }) {
+  const [password, setPassword] = useState('');
+
+  const handleChange = (event) => {
+    const newPassword = event.target.value;
+    setPassword(newPassword);
+    onPasswordChange(newPassword);
+  };
+
   return (
     //  From Uiverse.io by jubayer-10 
     <>
@@ -7,6 +19,8 @@ export default function Input() {
           className="peer w-full h-full bg-white text-lg font-light placeholder-slate-400 contrast-more:placeholder-slate-500 border border-slate-200 outline-none rounded-lg focus:border-color3 focus:ring-color3 focus:border-1 focus:ring-1 px-3"
           placeholder="Enter password"
           type="password"
+          value={password}
+          onChange={handleChange}
         />
       </div>
     </>
