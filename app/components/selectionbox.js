@@ -28,6 +28,7 @@ export default function SelectionBox({ data, onOptionChange}) {
                             name="status"
                             id={index}
                             checked={option === item}
+                            onChange={() => handleOptionChange(item)}
                             className="hidden"
                         />
                     </div>
