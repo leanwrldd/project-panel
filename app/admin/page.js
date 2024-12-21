@@ -1,17 +1,22 @@
 'use client'
-
-import PasswordInput from '/app/components/passwordinput.js';
+// Components
 import GithubIcon from '/app/components/github.js';
 import GoBack from '/app/components/goback.js';
 import Button from '/app/components/buttonv1.js';
-import { useState } from 'react';
+import PasswordInput from '/app/components/passwordinput.js';
+// React
+import { use, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Admin() {
+  // User States
   const [password, setPassword] = useState('');
+  // Router
+  const router = useRouter();
+
+
   const handlePasswordChange = (newPassword) => {
     setPassword(newPassword);
-    console.log('Password changed:', newPassword);
-
   };
 
   const HandleClick = async () => {
@@ -26,17 +31,20 @@ export default function Admin() {
     const data = await response.json();
 
     if (response.ok) {
-      alert(data.message);
+      localStorage.setItem('isAuthorized', 'true');
+      router.push('/admin/dashboard');
     } else {
       alert(data.error);
+      localStorage.setItem('isAuthorized', 'false');
     }
   };
+
   return (
     <>
       <div className='flex flex-col justify-center items-center custom-grid min-h-screen'>
         <h1 className='text-black font-default text-9xl'>Project Panel</h1>
-        <PasswordInput onPasswordChange={handlePasswordChange}/>
-        <Button placeholder="Log in" onClick={HandleClick}/>
+        <PasswordInput onPasswordChange={handlePasswordChange} />
+        <Button placeholder="Log in" onClick={HandleClick} />
       </div>
       <GithubIcon />
       <GoBack redirectTo="/" />
