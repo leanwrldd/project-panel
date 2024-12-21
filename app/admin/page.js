@@ -14,11 +14,7 @@ export default function Admin() {
 
   };
 
-  const HandleClick = () => {
-    console.log('Clicked');
-  };
-  const HandleAuthentication = async (event) => {
-    event.preventDefault();
+  const HandleClick = async () => {
     const response = await fetch('/api/verifyuser', {
       method: 'POST',
       headers: {
@@ -26,8 +22,15 @@ export default function Admin() {
       },
       body: JSON.stringify({ password }),
     });
-  };
 
+    const data = await response.json();
+
+    if (response.ok) {
+      alert(data.message);
+    } else {
+      alert(data.error);
+    }
+  };
   return (
     <>
       <div className='flex flex-col justify-center items-center custom-grid min-h-screen'>
