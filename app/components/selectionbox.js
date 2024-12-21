@@ -22,7 +22,7 @@ export default function SelectionBox({ data, onOptionChange}) {
                         className="m-5 font-medium h-14 hover:bg-zinc-100 flex items-center px-3 rounded-lg has-[:checked]:text-blue-500 has-[:checked]:bg-blue-50 has-[:checked]:ring-blue-300 has-[:checked]:ring-1 select-none"
                         onClick={() => handleOptionChange(item)}
                     >
-                        <label className="text-xl"> {item}</label>
+                        <label className="text-xl"> {item.name}</label>
                         <input
                             type="radio"
                             name="status"

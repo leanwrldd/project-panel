@@ -1,6 +1,7 @@
 'use client'
 
 import GoBack from '/app/components/goback.js';
+import SelectionBox from '/app/components/selectionbox';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
@@ -31,25 +32,8 @@ export default function Settings() {
   return (
     <div className="flex flex-col items-center p-2 text-black">
       {/* <GoBack onClick={() => router.push("/")} /> */}
-      
+      <SelectionBox data={classesData} onOptionChange={handleClassSelect}/>
       <div className="flex w-full mt-2">
-        {/* Classroom Selection */}
-        <div className="w-1/6 p-2 border border-gray-300 rounded-lg mr-2">
-          <h2 className="text-lg font-bold mb-2">Classrooms</h2>
-          
-          <ul>
-            {classesData.map((classData, index) => (
-              <li
-                key={index}
-                onClick={() => handleClassSelect(classData)}
-                className="cursor-pointer p-1 border-b border-gray-200 hover:bg-gray-100"
-              >
-                {classData.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-        {/* Classroom Selection */}
 
         {/* Classroom Details */}
         <div className="w-2/3 p-2 border border-gray-300 rounded-lg">
