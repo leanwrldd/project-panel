@@ -1,11 +1,11 @@
 'use client'
 // Components
 import GithubIcon from '/app/components/github.js';
-import GoBack from '/app/components/goback.js';
+import GoBackRedirect from '/app/components/goback-redirect.js';
 import Button from '/app/components/buttonv1.js';
 import PasswordInput from '/app/components/passwordinput.js';
 // React
-import { use, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function Admin() {
@@ -47,7 +47,7 @@ export default function Admin() {
         <Button placeholder="Log in" onClick={HandleClick} />
       </div>
       <GithubIcon />
-      <GoBack redirectTo="/" />
+      <GoBackRedirect redirectTo="/" />
     </>
   );
 }

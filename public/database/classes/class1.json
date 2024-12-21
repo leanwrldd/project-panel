@@ -1,0 +1,80 @@
+{
+  "name": "Classroom A",
+  "days": [
+    {
+      "day": "Monday",
+      "classes": [
+        { "className": "Math", "teacher": "Mr. Smith" },
+        { "className": "Biology", "teacher": "Ms. Johnson" },
+        { "className": "History", "teacher": "Mr. Brown" },
+        { "className": "Chemistry", "teacher": "Dr. White" },
+        { "className": "Physics", "teacher": "Dr. Green" },
+        { "className": "English", "teacher": "Ms. Black" },
+        { "className": "Art", "teacher": "Mr. Blue" },
+        { "className": "Music", "teacher": "Ms. Red" },
+        { "className": "Physical Education", "teacher": "Mr. Yellow" },
+        { "className": "Computer Science", "teacher": "Ms. Purple" }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "classes": [
+        { "className": "Math", "teacher": "Mr. Smith" },
+        { "className": "Biology", "teacher": "Ms. Johnson" },
+        { "className": "History", "teacher": "Mr. Brown" },
+        { "className": "Chemistry", "teacher": "Dr. White" },
+        { "className": "Physics", "teacher": "Dr. Green" },
+        { "className": "English", "teacher": "Ms. Black" },
+        { "className": "Art", "teacher": "Mr. Blue" },
+        { "className": "Music", "teacher": "Ms. Red" },
+        { "className": "Physical Education", "teacher": "Mr. Yellow" },
+        { "className": "Computer Science", "teacher": "Ms. Purple" }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "classes": [
+        { "className": "Math", "teacher": "Mr. Smith" },
+        { "className": "Biology", "teacher": "Ms. Johnson" },
+        { "className": "History", "teacher": "Mr. Brown" },
+        { "className": "Chemistry", "teacher": "Dr. White" },
+        { "className": "Physics", "teacher": "Dr. Green" },
+        { "className": "English", "teacher": "Ms. Black" },
+        { "className": "Art", "teacher": "Mr. Blue" },
+        { "className": "Music", "teacher": "Ms. Red" },
+        { "className": "Physical Education", "teacher": "Mr. Yellow" },
+        { "className": "Computer Science", "teacher": "Ms. Purple" }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "classes": [
+        { "className": "Math", "teacher": "Mr. Smith" },
+        { "className": "Biology", "teacher": "Ms. Johnson" },
+        { "className": "History", "teacher": "Mr. Brown" },
+        { "className": "Chemistry", "teacher": "Dr. White" },
+        { "className": "Physics", "teacher": "Dr. Green" },
+        { "className": "English", "teacher": "Ms. Black" },
+        { "className": "Art", "teacher": "Mr. Blue" },
+        { "className": "Music", "teacher": "Ms. Red" },
+        { "className": "Physical Education", "teacher": "Mr. Yellow" },
+        { "className": "Computer Science", "teacher": "Ms. Purple" }
+      ]
+    },
+    {
+      "day": "Friday",
+      "classes": [
+        { "className": "Math", "teacher": "Mr. Smith" },
+        { "className": "Biology", "teacher": "Ms. Johnson" },
+        { "className": "History", "teacher": "Mr. Brown" },
+        { "className": "Chemistry", "teacher": "Dr. White" },
+        { "className": "Physics", "teacher": "Dr. Green" },
+        { "className": "English", "teacher": "Ms. Black" },
+        { "className": "Art", "teacher": "Mr. Blue" },
+        { "className": "Music", "teacher": "Ms. Red" },
+        { "className": "Physical Education", "teacher": "Mr. Yellow" },
+        { "className": "Computer Science", "teacher": "Ms. Purple" }
+      ]
+    }
+  ]
+}
