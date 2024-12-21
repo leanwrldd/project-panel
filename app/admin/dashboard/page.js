@@ -7,8 +7,8 @@ import { useEffect, useState } from 'react';
 export default function Settings() {
   const router = useRouter();
   const [classesData, setClassesData] = useState([]);
+  const [selectedClass, setSelectedClass] = useState(null);
 
-  // Check if the user is authorized
   useEffect(() => {
     const isAuthorized = localStorage.getItem('isAuthorized');
     if (isAuthorized !== 'true') {
@@ -16,8 +16,7 @@ export default function Settings() {
     } else {
       loadClassesData();
     }
-  },
-  [router]);
+  }, [router]);
 
   const loadClassesData = async () => {
     const response = await fetch('/api/classes');
@@ -25,27 +24,66 @@ export default function Settings() {
     setClassesData(data);
   };
 
+  const handleClassSelect = (classData) => {
+    setSelectedClass(classData);
+  };
+
   return (
-    <div>
-      <GoBack onClick={() => router.push("/")} />
-      <div className='text-black'>
-        {classesData.map((classData, index) => (
-          <div key={index}>
-            <h2>{classData.name}</h2>
-            {classData.days.map((day, dayIndex) => (
-              <div key={dayIndex}>
-                <h3>{day.day}</h3>
-                <ul>
-                  {day.classes.map((classItem, classIndex) => (
-                    <li key={classIndex}>
-                      {classItem.className} - {classItem.teacher}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+    <div className="flex flex-col items-center p-2 text-black">
+      {/* <GoBack onClick={() => router.push("/")} /> */}
+      
+      <div className="flex w-full mt-2">
+        {/* Classroom Selection */}
+        <div className="w-1/6 p-2 border border-gray-300 rounded-lg mr-2">
+          <h2 className="text-lg font-bold mb-2">Classrooms</h2>
+          
+          <ul>
+            {classesData.map((classData, index) => (
+              <li
+                key={index}
+                onClick={() => handleClassSelect(classData)}
+                className="cursor-pointer p-1 border-b border-gray-200 hover:bg-gray-100"
+              >
+                {classData.name}
+              </li>
             ))}
-          </div>
-        ))}
+          </ul>
+        </div>
+        {/* Classroom Selection */}
+
+        {/* Classroom Details */}
+        <div className="w-2/3 p-2 border border-gray-300 rounded-lg">
+          {selectedClass ? (
+            <>
+              <h2 className="text-lg font-bold mb-2">{selectedClass.name}</h2>
+              <table className="min-w-full bg-white border border-gray-300">
+                <thead>
+                  <tr>
+                    <th className="py-1 px-2 border-b">Day</th>
+                    <th className="py-1 px-2 border-b">Class Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {selectedClass.days.map((day, dayIndex) =>
+                    day.classes.map((classItem, classIndex) => (
+                      <tr key={`${dayIndex}-${classIndex}`}>
+                        <td className="py-1 px-2 border-b">{day.day}</td>
+                        <td className="py-1 px-2 border-b">
+                          <div>{classItem.className}</div>
+                          <div className="text-sm text-gray-600">{classItem.teacher}</div>
+                        </td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </>
+          ) : (
+            <p>Select a classroom to see the details</p>
+          )}
+        </div>
+        {/* Classroom Details */}
+        
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ export default function Admin() {
   return (
     <>
       <div className='flex flex-col justify-center items-center custom-grid min-h-screen'>
-        <h1 className='text-black font-default text-9xl'>Project Panel</h1>
+        <h1 className='text-black lato-thin text-9xl'>Project Panel</h1>
         <PasswordInput onPasswordChange={handlePasswordChange} />
         <Button placeholder="Log in" onClick={HandleClick} />
       </div>

@@ -15,14 +15,31 @@
 }
 
 @font-face {
-  font-family: 'CoolFont';
+  font-family: 'Lato-thin';
   src: url('/fonts/Lato-Thin.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-
-.font-default {
-  font-family: 'CoolFont';
+@font-face {
+  font-family: 'Lato-regular';
+  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato-bold';
+  src: url('/fonts/Lato-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.lato-thin {
+  font-family: 'Lato-thin';
+}
+.lato-regular {
+  font-family: 'Lato-regular';
+}
+.lato-bold {
+  font-family: 'Lato-bold';
 }
 
 body {
