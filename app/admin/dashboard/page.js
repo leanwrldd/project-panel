@@ -8,6 +8,7 @@ export default function Settings() {
   const router = useRouter();
   const [classesData, setClassesData] = useState([]);
 
+  // Check if the user is authorized
   useEffect(() => {
     const isAuthorized = localStorage.getItem('isAuthorized');
     if (isAuthorized !== 'true') {
@@ -15,7 +16,8 @@ export default function Settings() {
     } else {
       loadClassesData();
     }
-  }, [router]);
+  },
+  [router]);
 
   const loadClassesData = async () => {
     const response = await fetch('/api/classes');
@@ -25,9 +27,8 @@ export default function Settings() {
 
   return (
     <div>
-      <h1 className='text-color3'>{localStorage.getItem('isAuthorized')}</h1>
       <GoBack onClick={() => router.push("/")} />
-      <div>
+      <div className='text-black'>
         {classesData.map((classData, index) => (
           <div key={index}>
             <h2>{classData.name}</h2>
@@ -37,7 +38,7 @@ export default function Settings() {
                 <ul>
                   {day.classes.map((classItem, classIndex) => (
                     <li key={classIndex}>
-                      {classItem.className || classItem.name} - {classItem.teacher}
+                      {classItem.className} - {classItem.teacher}
                     </li>
                   ))}
                 </ul>
