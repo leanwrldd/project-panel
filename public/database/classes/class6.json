@@ -1,0 +1,80 @@
+{
+  "name": "Classroom C",
+  "days": [
+    {
+      "day": "Monday",
+      "classes": [
+        { "className": "Art", "teacher": "Ms. Martinez" },
+        { "className": "Math", "teacher": "Mr. Smith" },
+        { "className": "Physical Education", "teacher": "Coach Wilson" },
+        { "className": "English", "teacher": "Ms. Johnson" },
+        { "className": "History", "teacher": "Mr. Davis" },
+        { "className": "Science", "teacher": "Dr. Brown" },
+        { "className": "Music", "teacher": "Mr. Lee" },
+        { "className": "Computer Science", "teacher": "Ms. Clark" },
+        { "className": "Geography", "teacher": "Mr. Lewis" },
+        { "className": "French", "teacher": "Ms. Walker" }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "classes": [
+        { "className": "Physical Education", "teacher": "Coach Wilson" },
+        { "className": "French", "teacher": "Ms. Walker" },
+        { "className": "Math", "teacher": "Mr. Smith" },
+        { "className": "Art", "teacher": "Ms. Martinez" },
+        { "className": "English", "teacher": "Ms. Johnson" },
+        { "className": "Geography", "teacher": "Mr. Lewis" },
+        { "className": "History", "teacher": "Mr. Davis" },
+        { "className": "Computer Science", "teacher": "Ms. Clark" },
+        { "className": "Science", "teacher": "Dr. Brown" },
+        { "className": "Music", "teacher": "Mr. Lee" }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "classes": [
+        { "className": "History", "teacher": "Mr. Davis" },
+        { "className": "Math", "teacher": "Mr. Smith" },
+        { "className": "English", "teacher": "Ms. Johnson" },
+        { "className": "Science", "teacher": "Dr. Brown" },
+        { "className": "Art", "teacher": "Ms. Martinez" },
+        { "className": "Physical Education", "teacher": "Coach Wilson" },
+        { "className": "Music", "teacher": "Mr. Lee" },
+        { "className": "Computer Science", "teacher": "Ms. Clark" },
+        { "className": "Geography", "teacher": "Mr. Lewis" },
+        { "className": "French", "teacher": "Ms. Walker" }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "classes": [
+        { "className": "Math", "teacher": "Mr. Smith" },
+        { "className": "English", "teacher": "Ms. Johnson" },
+        { "className": "History", "teacher": "Mr. Davis" },
+        { "className": "Science", "teacher": "Dr. Brown" },
+        { "className": "Physical Education", "teacher": "Coach Wilson" },
+        { "className": "Art", "teacher": "Ms. Martinez" },
+        { "className": "Music", "teacher": "Mr. Lee" },
+        { "className": "Computer Science", "teacher": "Ms. Clark" },
+        { "className": "Geography", "teacher": "Mr. Lewis" },
+        { "className": "French", "teacher": "Ms. Walker" }
+      ]
+    },
+    {
+      "day": "Friday",
+      "classes": [
+        { "className": "Math", "teacher": "Mr. Smith" },
+        { "className": "English", "teacher": "Ms. Johnson" },
+        { "className": "Science", "teacher": "Dr. Brown" },
+        { "className": "History", "teacher": "Mr. Davis" },
+        { "className": "Physical Education", "teacher": "Coach Wilson" },
+        { "className": "Art", "teacher": "Ms. Martinez" },
+        { "className": "Music", "teacher": "Mr. Lee" },
+        { "className": "Computer Science", "teacher": "Ms. Clark" },
+        { "className": "Geography", "teacher": "Mr. Lewis" },
+        { "className": "French", "teacher": "Ms. Walker" }
+      ]
+    }
+  ]
+}
