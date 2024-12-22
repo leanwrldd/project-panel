@@ -11,7 +11,8 @@ export default function Settings() {
   const [classesData, setClassesData] = useState([]);
   const [selectedClass, setSelectedClass] = useState([]);
 
-  const HandleClick = () => {
+  const HandleClick = (day) => {
+    alert(day);
 
   }
   useEffect(() => {
@@ -44,34 +45,38 @@ export default function Settings() {
     <div className="flex flex-row items-center w-full p-2 my-28 mx-5 text-black">
       {/* <GoBack onClick={() => router.push("/")} /> */}
       
-      <div className='relative w-full h-full flex gap-x-8'>
+      <div className='relative w-full h-full flex gap-x-6'>
         <SelectionBox data={classesData} onOptionChange={handleClassSelect}/>
           <div className='bg-white rounded-lg w-full p-8 mr-4 shadow-lg'>
-            <div className='flex justify-between -mt-6 pt-4 items-center'>
-              <div className='flex-1 text-left'>
-                <p className='text-5xl font-bold'>Class Details</p>
-              </div>
-              <Buttonv2 placeholder='Edit' onClick={HandleClick} className='ml-auto'/>
-            </div>
-
+                <p className='text-5xl text-left font-bold'>Class Details</p>
             {/* Display the selected class data */}
             <div>
               <table className="min-w-full divide-y mt-6 divide-gray-200">
                 <thead className="bg-gray-300">
                   <tr>
-                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
+                    <th scope="col" 
+                    onClick={() => HandleClick("Monday")} 
+                    className="select-none px-6 py-3 text-center text-xs font-medium hover:text-gray-400 cursor-pointer text-gray-800 uppercase tracking-wider">
                       Monday
                     </th>
-                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
+                    <th scope="col" 
+                    onClick={() => HandleClick("Tuesday")} 
+                    className="select-none px-6 py-3 text-center text-xs font-medium hover:text-gray-400 cursor-pointer text-gray-800 uppercase tracking-wider">
                       Tuesday
                     </th>
-                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
+                    <th scope="col" 
+                    onClick={() => HandleClick("Wednesday")} 
+                    className="select-none px-6 py-3 text-center text-xs font-medium hover:text-gray-400 cursor-pointer text-gray-800 uppercase tracking-wider">
                       Wednesday
                     </th>
-                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
+                    <th scope="col" 
+                    onClick={() => HandleClick("Thursday")} 
+                    className="select-none px-6 py-3 text-center text-xs font-medium hover:text-gray-400 cursor-pointer text-gray-800 uppercase tracking-wider">
                       Thursday
                     </th>
-                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
+                    <th scope="col"
+                    onClick={() => HandleClick("Friday")} 
+                    className="select-none px-6 py-3 text-center text-xs font-medium hover:text-gray-400 cursor-pointer text-gray-800 uppercase tracking-wider">
                       Friday
                     </th>
                   </tr>
