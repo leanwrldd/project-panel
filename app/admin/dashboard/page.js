@@ -30,45 +30,15 @@ export default function Settings() {
   };
 
   return (
-    <div className="flex flex-col items-center p-2 text-black">
+    <div className="flex flex-row items-center w-full p-2 my-28 mx-5 text-black">
       {/* <GoBack onClick={() => router.push("/")} /> */}
-      <SelectionBox data={classesData} onOptionChange={handleClassSelect}/>
-      <div className="flex w-full mt-2">
-
-        {/* Classroom Details */}
-        <div className="w-2/3 p-2 border border-gray-300 rounded-lg">
-          {selectedClass ? (
-            <>
-              <h2 className="text-lg font-bold mb-2">{selectedClass.name}</h2>
-              <table className="min-w-full bg-white border border-gray-300">
-                <thead>
-                  <tr>
-                    <th className="py-1 px-2 border-b">Day</th>
-                    <th className="py-1 px-2 border-b">Class Name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {selectedClass.days.map((day, dayIndex) =>
-                    day.classes.map((classItem, classIndex) => (
-                      <tr key={`${dayIndex}-${classIndex}`}>
-                        <td className="py-1 px-2 border-b">{day.day}</td>
-                        <td className="py-1 px-2 border-b">
-                          <div>{classItem.className}</div>
-                          <div className="text-sm text-gray-600">{classItem.teacher}</div>
-                        </td>
-                      </tr>
-                    ))
-                  )}
-                </tbody>
-              </table>
-            </>
-          ) : (
-            <p>Select a classroom to see the details</p>
-          )}
-        </div>
-        {/* Classroom Details */}
-        
-      </div>
+      
+      <div className='relative w-full h-full flex gap-x-8'>
+        <SelectionBox data={classesData} onOptionChange={handleClassSelect}/>
+          <div className='bg-white rounded-lg w-full mr-8'>
+            <p>test</p>
+          </div>
+      </div>        
     </div>
   );
 }
