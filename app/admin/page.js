@@ -5,8 +5,8 @@ import GoBackRedirect from '/app/components/goback-redirect.js';
 import Button from '/app/components/buttonv1.js';
 import PasswordInput from '/app/components/passwordinput.js';
 // React
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState,  useEffect} from 'react';
+import { useRouter,} from 'next/navigation';
 
 export default function Admin() {
   // User States
@@ -14,7 +14,10 @@ export default function Admin() {
   // Router
   const router = useRouter();
 
-
+  useEffect(() => {
+    localStorage.setItem('isAuthorized', 'false');
+    }
+);
   const handlePasswordChange = (newPassword) => {
     setPassword(newPassword);
   };

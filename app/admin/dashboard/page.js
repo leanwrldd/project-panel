@@ -1,6 +1,7 @@
 'use client'
 
 import GoBack from '/app/components/goback.js';
+import Buttonv2 from '/app/components/buttonv2.js';
 import SelectionBox from '/app/components/selectionbox';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -10,6 +11,9 @@ export default function Settings() {
   const [classesData, setClassesData] = useState([]);
   const [selectedClass, setSelectedClass] = useState([]);
 
+  const HandleClick = () => {
+
+  }
   useEffect(() => {
     const isAuthorized = localStorage.getItem('isAuthorized');
     if (isAuthorized !== 'true') {
@@ -42,26 +46,33 @@ export default function Settings() {
       
       <div className='relative w-full h-full flex gap-x-8'>
         <SelectionBox data={classesData} onOptionChange={handleClassSelect}/>
-          <div className='bg-white rounded-lg w-full p-8 mr-8 shadow-lg' >
+          <div className='bg-white rounded-lg w-full p-8 mr-4 shadow-lg'>
+            <div className='flex justify-between -mt-6 pt-4 items-center'>
+              <div className='flex-1 text-left'>
+                <p className='text-5xl font-bold'>Class Details</p>
+              </div>
+              <Buttonv2 placeholder='Edit' onClick={HandleClick} className='ml-auto'/>
+            </div>
+
+            {/* Display the selected class data */}
             <div>
-              <p className='text-2xl font-bold text-center'>Class Details</p>
               <table className="min-w-full divide-y mt-6 divide-gray-200">
                 <thead className="bg-gray-300">
                   <tr>
                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
-                       Monday
+                      Monday
                     </th>
                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
-                       Tuesday
+                      Tuesday
                     </th>
                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
-                       Wednesday
+                      Wednesday
                     </th>
                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
-                       Thursday
+                      Thursday
                     </th>
                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
-                       Friday
+                      Friday
                     </th>
                   </tr>
                 </thead>

@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <>
       <div className='flex justify-center items-center h-screen'>
-        <GoBackRedirect redirectTo="/admin"/>
+
+      <GoBackRedirect redirectTo="/admin"/>
       </div>
     </>
   );
