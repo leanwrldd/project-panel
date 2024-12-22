@@ -48,19 +48,19 @@ export default function Settings() {
               <table className="min-w-full divide-y mt-6 divide-gray-200">
                 <thead className="bg-gray-300">
                   <tr>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
                        Monday
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
                        Tuesday
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
                        Wednesday
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
                        Thursday
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-800 uppercase tracking-wider">
                        Friday
                     </th>
                   </tr>
@@ -69,7 +69,7 @@ export default function Settings() {
                   {Array.from({ length: 10 }).map((_, b) => (
                     <tr key={b}>
                       {selectedClass.days && selectedClass.days.map((day, index) => (
-                          <th key={index}className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{day.classes[b].className}</th>
+                          <th key={index}className="px-6 py-[6px] whitespace-nowrap text-md text-gray-900">{day.classes[b].className} <p className='text-xs lato-thin '>{day.classes[b].teacher}</p></th>
                       ))}
                     </tr>
                   ))}
