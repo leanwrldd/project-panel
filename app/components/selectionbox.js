@@ -11,7 +11,7 @@ export default function SelectionBox({ data, onOptionChange}) {
         }
     };
     return (
-        <div className="flex flex-col items-start p-2 text-black bg-white w-1/5 rounded-xl">
+        <div className="flex flex-col items-start p-2 text-black bg-white w-1/5 rounded-xl shadow-lg">
             <div className="text-left lato-bold m-3 text-2xl">
                 <h1>Select class</h1>
             </div>
