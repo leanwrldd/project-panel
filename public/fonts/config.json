@@ -1,9 +1,5 @@
 {
     "auth":{
         "password": "testadmin"
-    },
-    "options":{
-        "classes": ["Math", "Science", "English", "History", "Art", "Music", "PE", "Computer Science"],
-        "teachers": ["Mr. Smith", "Mrs. Johnson", "Mr. Brown", "Mrs. Davis", "Mr. Wilson", "Mrs. Moore", "Mr. Taylor", "Mrs. Anderson"]
     }
 }
