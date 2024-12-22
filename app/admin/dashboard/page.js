@@ -44,7 +44,7 @@ export default function Settings() {
         <SelectionBox data={classesData} onOptionChange={handleClassSelect}/>
           <div className='bg-white rounded-lg w-full p-8 mr-8 shadow-lg' >
             <div>
-              <p className='text-2xl font-bold text-center'>Class Details {selectedClass.name}</p>
+              <p className='text-2xl font-bold text-center'>Class Details</p>
               <table className="min-w-full divide-y mt-6 divide-gray-200">
                 <thead className="bg-gray-300">
                   <tr>
@@ -66,33 +66,11 @@ export default function Settings() {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {selectedClass.days && selectedClass.days.map((day, index) => (
-                    <tr key={index}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {day.day === 'Monday' && day.classes.map((classItem, i) => (
-                          <div key={i}>{classItem.className} - {classItem.teacher}</div>
-                        ))}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {day.day === 'Tuesday' && day.classes.map((classItem, i) => (
-                          <div key={i}>{classItem.className} - {classItem.teacher}</div>
-                        ))}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {day.day === 'Wednesday' && day.classes.map((classItem, i) => (
-                          <div key={i}>{classItem.className} - {classItem.teacher}</div>
-                        ))}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {day.day === 'Thursday' && day.classes.map((classItem, i) => (
-                          <div key={i}>{classItem.className} - {classItem.teacher}</div>
-                        ))}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {day.day === 'Friday' && day.classes.map((classItem, i) => (
-                          <div key={i}>{classItem.className} - {classItem.teacher}</div>
-                        ))}
-                      </td>
+                  {Array.from({ length: 10 }).map((_, b) => (
+                    <tr key={b}>
+                      {selectedClass.days && selectedClass.days.map((day, index) => (
+                          <th key={index}className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{day.classes[b].className}</th>
+                      ))}
                     </tr>
                   ))}
                 </tbody>
