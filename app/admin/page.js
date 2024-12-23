@@ -28,7 +28,7 @@ export default function Admin() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ password }),
+      body: JSON.stringify({ password , request:"password"}),
     });
 
     const data = await response.json();
