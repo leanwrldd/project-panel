@@ -10,7 +10,7 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex}) => {
   const router = useRouter();
 
   const [classesData, setClassesData] = useState([]);
-  const [config, setConfig] = useState("");
+  const [config, setConfig] = useState(null);
 
   useEffect(() => {
     const isAuthorized = localStorage.getItem('isAuthorized');
@@ -24,8 +24,10 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex}) => {
   const loadData = async () => {
     const response_class = await fetch('/api/classes');
     const data_class = await response_class.json();
-    const response_config = await fetch('/api/classes');
+    const response_config = await fetch('/api/readConfig');
     const data_config = await response_config.json();
+    console.log("Fetching data...");
+    console.log('Config Data:', data_config); // Log the fetched data
     setClassesData(data_class);
     setConfig(data_config)
   };
