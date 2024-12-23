@@ -2,14 +2,8 @@ import fs from 'fs';
 import path from 'path';
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: `Method Not Allowed: ${req.method}` });
-  }
-
   let cachedConfig = null;
-  const { password } = req.body;
-  const { request } = req.body;
-
+  const { password, request } = req.method === 'POST' ? req.body : req.query;
   try {
     const filePath = path.join(process.cwd(),'public','config.json');
     const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -20,6 +14,9 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Internal Server Error, Couldn't Read Config file." });
   }
   if (request==="password"){
+    if (req.method !== 'POST') {
+      return res.status(405).json({ error: `Method Not Allowed: ${req.method}` });
+    }
     if (password === cachedConfig.auth.password) {
       return res.status(200).json({ message: "Password verified." });
     } else {
@@ -27,10 +24,13 @@ export default async function handler(req, res) {
     }
   }
   else if (request==="config") {
+    if (req.method !== 'GET') {
+      return res.status(405).json({ error: `Method Not Allowed: ${req.method}` });
+    }
     return res.status(200).json(cachedConfig.options);
   }
   else {
-    console.error("Invalid Request, Request method not found. ${request}");
+    console.error("Invalid Request, Request method not found.");
     return res.status(400).json({ error: "Invalid request."})
   }
 

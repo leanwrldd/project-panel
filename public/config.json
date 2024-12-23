@@ -6,12 +6,16 @@
         "teachers": [
             "John Doe",
             "Jane Smith",
-            "Emily Johnson"
+            "Emily Johnson",
+            "Michael Brown",
+            "Sarah Davis"
         ],
         "classes": [
             "Math",
             "Science",
-            "History"
+            "History",
+            "English",
+            "Physics"
         ]
     }
 }

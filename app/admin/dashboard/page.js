@@ -2,6 +2,7 @@
 
 import GoBack from '/app/components/goback.js';
 import Buttonv2 from '/app/components/buttonv2.js';
+import Popup from '/app/components/popup.js';
 import SelectionBox from '/app/components/selectionbox';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -10,9 +11,12 @@ export default function Settings() {
   const router = useRouter();
   const [classesData, setClassesData] = useState([]);
   const [selectedClass, setSelectedClass] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedDay, setSelectedDay] = useState(null);
 
   const HandleClick = (day) => {
-    alert(day);
+    setShowPopup(true);
+    setSelectedDay(day);
 
   }
   useEffect(() => {
@@ -44,7 +48,7 @@ export default function Settings() {
   return (
     <div className="flex flex-row items-center w-full p-2 my-28 mx-5 text-black">
       {/* <GoBack onClick={() => router.push("/")} /> */}
-      
+      <Popup show={showPopup} onClose={() => setShowPopup(false)} selectedClass={selectedClass} selectedDayIndex={selectedDay} />
       <div className='relative w-full h-full flex gap-x-6'>
         <SelectionBox data={classesData} onOptionChange={handleClassSelect}/>
           <div className='bg-white rounded-lg w-full p-8 mr-4 shadow-lg'>
