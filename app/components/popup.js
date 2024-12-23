@@ -8,6 +8,12 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex }) => {
   const [classesData, setClassesData] = useState([]);
   const [config, setConfig] = useState(null);
 
+  const loadDayData = () => {
+    if (selectedClass && selectedDayIndex !== null) {
+      const selectedDay = selectedClass.days[selectedDayIndex];
+      console.log("Selected Day:", selectedDay); // Log the selected day data
+    }
+  };
   useEffect(() => {
     const isAuthorized = localStorage.getItem('isAuthorized');
     if (isAuthorized !== 'true') {
@@ -27,7 +33,7 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex }) => {
       setClassesData(data_class);
       setConfig(data_config);
   };
-
+  // okay so gang, we need to display the selected class. selected day data in the popup
   if (!show) return null;
 
   return (
@@ -40,7 +46,7 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex }) => {
           ❌
         </button>
         <button
-          onClick={onClose}
+          onClick={loadDayData}
           className="absolute top-[7px] text-xl right-[50px] text-gray-500 hover:text-black"
         >
           ✔️

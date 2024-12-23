@@ -59,27 +59,27 @@ export default function Settings() {
                 <thead className="bg-gray-300">
                   <tr>
                     <th scope="col" 
-                    onClick={() => HandleClick("Monday")} 
+                    onClick={() => HandleClick(0)} 
                     className="select-none px-6 py-3 text-center text-xs font-medium hover:text-gray-400 cursor-pointer text-gray-800 uppercase tracking-wider">
                       Monday
                     </th>
                     <th scope="col" 
-                    onClick={() => HandleClick("Tuesday")} 
+                    onClick={() => HandleClick(1)} 
                     className="select-none px-6 py-3 text-center text-xs font-medium hover:text-gray-400 cursor-pointer text-gray-800 uppercase tracking-wider">
                       Tuesday
                     </th>
                     <th scope="col" 
-                    onClick={() => HandleClick("Wednesday")} 
+                    onClick={() => HandleClick(2)} 
                     className="select-none px-6 py-3 text-center text-xs font-medium hover:text-gray-400 cursor-pointer text-gray-800 uppercase tracking-wider">
                       Wednesday
                     </th>
                     <th scope="col" 
-                    onClick={() => HandleClick("Thursday")} 
+                    onClick={() => HandleClick(3)} 
                     className="select-none px-6 py-3 text-center text-xs font-medium hover:text-gray-400 cursor-pointer text-gray-800 uppercase tracking-wider">
                       Thursday
                     </th>
                     <th scope="col"
-                    onClick={() => HandleClick("Friday")} 
+                    onClick={() => HandleClick(4)} 
                     className="select-none px-6 py-3 text-center text-xs font-medium hover:text-gray-400 cursor-pointer text-gray-800 uppercase tracking-wider">
                       Friday
                     </th>
