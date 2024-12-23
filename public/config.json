@@ -1,5 +1,17 @@
 {
     "auth": {
         "password": "testadmin"
+    },
+    "options": {
+        "teachers": [
+            "John Doe",
+            "Jane Smith",
+            "Emily Johnson"
+        ],
+        "classes": [
+            "Math",
+            "Science",
+            "History"
+        ]
     }
 }
