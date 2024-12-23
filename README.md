@@ -6,5 +6,5 @@ to do :
 3. Turkish language pack + setting
 4. Change admin password setting
 
-
+EDIT THE VERIFYUSER.API to actually get a var from the req to tell if its verifying user or sending back config data
 maybe a dark mode????
