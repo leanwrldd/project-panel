@@ -12,11 +12,11 @@ export default function Settings() {
   const [classesData, setClassesData] = useState([]);
   const [selectedClass, setSelectedClass] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
-  const [selectedDay, setSelectedDay] = useState(null);
+  const [selectedDayIndex, setSelectedDayIndex] = useState(null);
 
-  const HandleClick = (day) => {
+  const HandleClick = (dayIndex) => {
     setShowPopup(true);
-    setSelectedDay(day);
+    setSelectedDayIndex(dayIndex);
 
   }
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function Settings() {
   return (
     <div className="flex flex-row items-center w-full p-2 my-28 mx-5 text-black">
       {/* <GoBack onClick={() => router.push("/")} /> */}
-      <Popup show={showPopup} onClose={() => setShowPopup(false)} selectedClass={selectedClass} selectedDayIndex={selectedDay} />
+      <Popup show={showPopup} onClose={() => setShowPopup(false)} selectedClass={selectedClass} selectedDayIndex={selectedDayIndex} />
       <div className='relative w-full h-full flex gap-x-6'>
         <SelectionBox data={classesData} onOptionChange={handleClassSelect}/>
           <div className='bg-white rounded-lg w-full p-8 mr-4 shadow-lg'>
