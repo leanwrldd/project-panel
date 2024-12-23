@@ -23,7 +23,7 @@ export default function Admin() {
   };
 
   const HandleClick = async () => {
-    const response = await fetch('/api/verifyuser', {
+    const response = await fetch('/api/readConfig', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
