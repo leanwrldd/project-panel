@@ -1,4 +1,3 @@
-// components/Popup.js
 'use client';
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -13,6 +12,9 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex }) => {
       const selectedDay = selectedClass.days[selectedDayIndex];
       console.log("Selected Day:", selectedDay); // Log the selected day data
     }
+    else {
+      console.log("No class selected");
+    }
   };
   useEffect(() => {
     const isAuthorized = localStorage.getItem('isAuthorized');
@@ -25,16 +27,11 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex }) => {
   }, [router]);
 
   const loadData = async () => {
-      const response_class = await fetch('/api/classes');
-      const data_class = await response_class.json();
       const response_config = await fetch('/api/readConfig?request=config');
       const data_config = await response_config.json();
-      console.log("Fetching data...");
-      console.log('Config Data:', data_config); // Log the fetched data
-      setClassesData(data_class);
       setConfig(data_config);
   };
-  // okay so gang, we need to display the selected class. selected day data in the popup
+
   if (!show) return null;
 
   return (
