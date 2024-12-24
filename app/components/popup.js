@@ -63,17 +63,13 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex }) => {
           <tbody className="bg-white divide-y divide-gray-200 ">
             {dayData.classes && dayData.classes.map((classData, index) => (<tr key={index}>
               <th className="py-[6px] border-b-2 mt-5 select-none whitespace-nowrap text-md text-gray-900">
-                <select>
-
-                  <option>{classData.className}</option>
+              <select defaultValue={classData.className}>
                   {config && config.classes.map((className, index) => (<option key={index}>{className}</option>))}
 
                 </select>
               </th>
               <th className="py-[6px] border-b-2 mt-5 select-none whitespace-nowrap text-md text-gray-900">
-                <select>
-
-                  <option>{classData.teacher}</option>
+                <select defaultValue={classData.teacher}>
                   {config && config.teachers.map((teacherName, index) => (<option key={index}>{teacherName}</option>))}
 
                 </select>
