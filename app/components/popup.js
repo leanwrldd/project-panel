@@ -32,6 +32,9 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex }) => {
     }
   }, [selectedClass, selectedDayIndex]);
 
+  const HandleChange = (request, index, newClass) => {
+    console.log(request,index,newClass)
+  };
   if (!show) return null;
 
   return (
@@ -61,17 +64,16 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex }) => {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200 ">
-            {dayData.classes && dayData.classes.map((classData, index) => (<tr key={index}>
+            {dayData.classes && dayData.classes.map((classData, index) => 
+            (<tr key={index}>
               <th className="py-[6px] border-b-2 mt-5 select-none whitespace-nowrap text-md text-gray-900">
-              <select defaultValue={classData.className}>
+              <select defaultValue={classData.className} onChange={(e) => {HandleChange("class", index, e.target.value)}}>
                   {config && config.classes.map((className, index) => (<option key={index}>{className}</option>))}
-
                 </select>
               </th>
               <th className="py-[6px] border-b-2 mt-5 select-none whitespace-nowrap text-md text-gray-900">
-                <select defaultValue={classData.teacher}>
+                <select defaultValue={classData.teacher} onChange={(e) => {HandleChange("teacher", index, e.target.value)}}>
                   {config && config.teachers.map((teacherName, index) => (<option key={index}>{teacherName}</option>))}
-
                 </select>
               </th>
             </tr>))}
