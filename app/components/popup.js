@@ -6,6 +6,7 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex }) => {
   const router = useRouter();
   const [dayData, setDayData] = useState([]);
   const [config, setConfig] = useState(null);
+  const [changedData, setChangedData] = useState([]);
 
     const loadData = async () => {
       const response_config = await fetch('/api/readConfig?request=config');
@@ -33,6 +34,12 @@ const Popup = ({ show, onClose, selectedClass, selectedDayIndex }) => {
   }, [selectedClass, selectedDayIndex]);
 
   const HandleChange = (request, index, newClass) => {
+    const changedDataCopy = changedData;
+    const newObject = {request: request, index: index, newClass: newClass};
+    changedDataCopy.push(newObject);
+    changedData = changedDataCopy;
+    
+
     console.log(request,index,newClass)
   };
   if (!show) return null;
